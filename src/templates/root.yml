@@ -20,6 +20,10 @@ configurations:
     configurationPath: polygon.yml
     schemaPath: ethereum-schema.json
     
+  $namespace xdc:
+    configurationPath: xdc.yml
+    schemaPath: ethereum-schema.json
+    
   $namespace defira:
     configurationPath: defira.yml
     schemaPath: defira-schema.json

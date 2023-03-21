@@ -4,6 +4,7 @@ import { BinanceSmartChain } from '../../chains/binance-smart-chain/binance-smar
 import { Cronos } from '../../chains/cronos/cronos';
 import { Ethereum } from '../../chains/ethereum/ethereum';
 import { Polygon } from '../../chains/polygon/polygon';
+import { Xdc } from '../../chains/xdc/xdc';
 import { Cosmos } from '../../chains/cosmos/cosmos';
 import { Harmony } from '../../chains/harmony/harmony';
 
@@ -57,6 +58,8 @@ export async function addWallet(
     connection = Cronos.getInstance(req.network);
   } else if (req.chain === 'polygon') {
     connection = Polygon.getInstance(req.network);
+  } else if (req.chain === 'xdc') {
+    connection = Xdc.getInstance(req.network);
   } else if (req.chain === 'cosmos') {
     connection = Cosmos.getInstance(req.network);
   } else if (req.chain === 'near') {
