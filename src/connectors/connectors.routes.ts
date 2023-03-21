@@ -7,6 +7,7 @@ import { OpenoceanConfig } from './openocean/openocean.config';
 import { PangolinConfig } from './pangolin/pangolin.config';
 import { PerpConfig } from './perp/perp.config';
 import { QuickswapConfig } from './quickswap/quickswap.config';
+import { XsswapConfig } from './xsswap/xsswap.config';
 import { SushiswapConfig } from './sushiswap/sushiswap.config';
 import { TraderjoeConfig } from './traderjoe/traderjoe.config';
 import { UniswapConfig } from './uniswap/uniswap.config';
@@ -49,6 +50,11 @@ export namespace ConnectorsRoutes {
             name: 'quickswap',
             trading_type: QuickswapConfig.config.tradingTypes,
             available_networks: QuickswapConfig.config.availableNetworks,
+          },
+          {
+            name: 'xsswap',
+            trading_type: XsswapConfig.config.tradingTypes,
+            available_networks: XsswapConfig.config.availableNetworks,
           },
           {
             name: 'perp',
