@@ -11,6 +11,7 @@ import { Pangolin } from '../connectors/pangolin/pangolin';
 import { Perp } from '../connectors/perp/perp';
 import { Quickswap } from '../connectors/quickswap/quickswap';
 import { Xsswap } from '../connectors/xsswap/xsswap';
+import { Globiance } from '../connectors/globiance/globiance';
 import { PancakeSwap } from '../connectors/pancakeswap/pancakeswap';
 import { Uniswap } from '../connectors/uniswap/uniswap';
 import { UniswapLP } from '../connectors/uniswap/uniswap.lp';
@@ -92,6 +93,8 @@ export async function getConnector<T>(
     connectorInstance = Quickswap.getInstance(chain, network);
   } else if (chain === 'xdc' && connector === 'xsswap') {
     connectorInstance = Xsswap.getInstance(chain, network);
+  } else if (chain === 'xdc' && connector === 'globiance') {
+    connectorInstance = Globiance.getInstance(chain, network);
   } else if (
     (chain === 'ethereum' || chain === 'polygon') &&
     connector === 'uniswapLP'
