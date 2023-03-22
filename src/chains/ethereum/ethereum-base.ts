@@ -18,6 +18,7 @@ import fse from 'fs-extra';
 import { ConfigManagerCertPassphrase } from '../../services/config-manager-cert-passphrase';
 import { logger } from '../../services/logger';
 import { ReferenceCountingCloseable } from '../../services/refcounting-closeable';
+import { convertXdcPublicKey } from '../../helpers';
 
 // information about an Ethereum token
 export interface TokenInfo {
@@ -191,7 +192,7 @@ export class EthereumBase {
     const path = `${walletPath}/${this.chainName}`;
 
     const encryptedPrivateKey: string = await fse.readFile(
-      `${path}/${address}.json`,
+      `${path}/${convertXdcPublicKey(address)}.json`,
       'utf8'
     );
 

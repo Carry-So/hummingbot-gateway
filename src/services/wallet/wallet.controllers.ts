@@ -29,6 +29,8 @@ import {
 import { EthereumBase } from '../../chains/ethereum/ethereum-base';
 import { Near } from '../../chains/near/near';
 
+import { convertXdcPrivateKey } from '../../helpers';
+
 const walletPath = './conf/wallets';
 export async function mkdirIfDoesNotExist(path: string): Promise<void> {
   const exists = await fse.pathExists(path);
@@ -86,6 +88,7 @@ export async function addWallet(
 
   try {
     if (connection instanceof EthereumBase) {
+      req.privateKey = convertXdcPrivateKey(req.privateKey);
       address = connection.getWalletFromPrivateKey(req.privateKey).address;
       encryptedPrivateKey = await connection.encrypt(
         req.privateKey,
